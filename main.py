@@ -1,3 +1,16 @@
+# the logging things
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
+import pyrogram
+import os
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery, Message
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel
+
 from telethon import TelegramClient, events, Button
 from gogoanimeapi import gogoanime as gogo
 import formating_results as format
